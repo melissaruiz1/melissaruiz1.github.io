@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Melissa Ruiz · Software Engineer, ML / AI Platform</title>
+<meta name="description" content="Melissa Ruiz is a software engineer at Snap Inc. building ML training infrastructure, compute orchestration, and distributed systems in Python. Based in Los Angeles.">
+<meta property="og:title" content="Melissa Ruiz · Software Engineer, ML / AI Platform">
+<meta property="og:description" content="ML training infrastructure, compute orchestration, and distributed systems. Los Angeles, CA.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e0f13" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%234f46e5'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='34' font-style='italic' text-anchor='middle' fill='white'%3Em%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f5f0; --surface:#ffffff; --ink:#15161a; --muted:#5d6068; --line:#e4e0d6;
+  --accent:#4f46e5; --accent-soft:#eceafd; --accent-ink:#3730a3;
+  --shadow:0 1px 2px rgba(20,20,30,.04),0 8px 24px -8px rgba(20,20,30,.10);
+  --shadow-hover:0 2px 4px rgba(20,20,30,.05),0 18px 40px -12px rgba(79,70,229,.25);
+  --serif:'Instrument Serif',Georgia,'Times New Roman',serif;
+  --sans:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  --radius:18px; --max:1080px;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#0e0f13; --surface:#16181e; --ink:#eceae4; --muted:#9a9ca5; --line:#262932;
+    --accent:#8b86ff; --accent-soft:#1f1f3d; --accent-ink:#c4c1ff;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px -8px rgba(0,0,0,.5);
+    --shadow-hover:0 2px 4px rgba(0,0,0,.3),0 18px 40px -12px rgba(139,134,255,.3);
+  }
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.65;font-size:17px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:var(--bg);padding:8px 14px;border-radius:8px;z-index:100}
+.skip:focus{left:12px}
+
+/* nav */
+nav{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .3s,border-color .3s,box-shadow .3s;border-bottom:1px solid transparent}
+nav.scrolled{background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px);border-color:var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-family:var(--serif);font-size:25px;letter-spacing:-.01em}
+.logo i{color:var(--accent)}
+.links{display:flex;gap:6px;align-items:center;list-style:none}
+.links a{font-size:15px;color:var(--muted);padding:8px 14px;border-radius:999px;transition:color .2s,background .2s}
+.links a:hover,.links a.active{color:var(--ink);background:var(--accent-soft)}
+.links .cta{background:var(--ink);color:var(--bg);margin-left:6px}
+.links .cta:hover{background:var(--accent);color:#fff}
+.burger{display:none;background:none;border:0;color:var(--ink);padding:10px;cursor:pointer}
+.burger svg{display:block}
+
+/* hero */
+.hero{position:relative;padding:168px 0 110px;overflow:hidden}
+.glow{position:absolute;border-radius:50%;filter:blur(90px);opacity:.5;pointer-events:none;z-index:-1}
+.g1{width:520px;height:520px;background:radial-gradient(circle,#a5a1ff,transparent 70%);top:-160px;right:-120px;animation:float 14s ease-in-out infinite}
+.g2{width:420px;height:420px;background:radial-gradient(circle,#ffd3a8,transparent 70%);bottom:-140px;left:-120px;animation:float 18s ease-in-out infinite reverse}
+@media (prefers-color-scheme:dark){.glow{opacity:.22}}
+@keyframes float{50%{transform:translate(30px,24px) scale(1.06)}}
+.hero-grid{display:grid;grid-template-columns:1.5fr .8fr;gap:64px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:13px;color:var(--accent-ink);background:var(--accent-soft);padding:7px 14px;border-radius:999px}
+.eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 4px rgba(34,197,94,.2);animation:pulse 2.4s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 7px rgba(34,197,94,0)}}
+h1{font-family:var(--serif);font-weight:400;font-size:clamp(46px,7.4vw,92px);line-height:1;letter-spacing:-.025em;margin:26px 0 24px}
+h1 em{color:var(--accent);font-style:italic}
+.lede{font-size:clamp(18px,2vw,21px);color:var(--muted);max-width:560px}
+.lede strong{color:var(--ink);font-weight:500}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:500;font-size:15.5px;padding:13px 22px;border-radius:999px;border:1px solid var(--line);background:var(--surface);transition:transform .2s,box-shadow .25s,background .2s,color .2s,border-color .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:var(--shadow-hover);border-color:var(--accent)}
+.btn.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+.btn.primary:hover{background:var(--accent-ink)}
+.btn svg{width:17px;height:17px}
+.portrait{position:relative;justify-self:center;width:min(100%,320px);aspect-ratio:1/1.08}
+.portrait .frame{position:absolute;inset:0;border-radius:42% 58% 52% 48%/48% 44% 56% 52%;overflow:hidden;background:linear-gradient(135deg,var(--accent),#c084fc 60%,#fdba74);box-shadow:var(--shadow);animation:morph 16s ease-in-out infinite}
+.portrait .frame::after{content:"MR";position:absolute;inset:0;display:grid;place-items:center;font-family:var(--serif);font-style:italic;font-size:96px;color:rgba(255,255,255,.92)}
+.portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+.portrait::before{content:"";position:absolute;inset:-14px;border:1.5px dashed var(--line);border-radius:46% 54% 50% 50%/50% 46% 54% 50%;animation:morph 16s ease-in-out infinite reverse}
+@keyframes morph{50%{border-radius:56% 44% 46% 54%/42% 56% 44% 58%}}
+
+/* sections */
+section{padding:104px 0}
+.label{font-family:var(--mono);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-ink)}
+h2{font-family:var(--serif);font-weight:400;font-size:clamp(36px,5vw,56px);line-height:1.05;letter-spacing:-.02em;margin:12px 0 44px}
+h2 em{color:var(--accent)}
+.about-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:64px;align-items:start}
+.about p{color:var(--muted);margin-bottom:18px}
+.about p strong{color:var(--ink);font-weight:500}
+.facts{display:grid;gap:14px}
+.fact{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;display:flex;gap:16px;align-items:flex-start;transition:transform .25s,box-shadow .25s}
+.fact:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.fact .ic{flex:none;width:40px;height:40px;border-radius:12px;background:var(--accent-soft);color:var(--accent-ink);display:grid;place-items:center}
+.fact b{display:block;font-weight:600;font-size:15.5px}
+.fact span{font-size:14.5px;color:var(--muted)}
+
+/* timeline */
+.timeline{position:relative;display:grid;gap:22px;padding-left:34px}
+.timeline::before{content:"";position:absolute;left:7px;top:10px;bottom:10px;width:2px;background:linear-gradient(var(--accent),var(--line))}
+.job{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:30px 32px;transition:transform .25s,box-shadow .25s,border-color .25s}
+.job:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:color-mix(in srgb,var(--accent) 40%,var(--line))}
+.job::before{content:"";position:absolute;left:-34px;top:36px;width:16px;height:16px;border-radius:50%;background:var(--bg);border:3px solid var(--accent)}
+.job.now::before{background:var(--accent);box-shadow:0 0 0 6px var(--accent-soft)}
+.job-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 20px;margin-bottom:14px}
+.job h3{font-size:20px;font-weight:600;letter-spacing:-.01em}
+.job .org{color:var(--accent-ink);font-weight:500}
+.job .when{font-family:var(--mono);font-size:13px;color:var(--muted);padding-top:4px}
+.job ul{list-style:none;display:grid;gap:10px;color:var(--muted);font-size:16px}
+.job li{position:relative;padding-left:22px}
+.job li::before{content:"";position:absolute;left:0;top:.7em;width:10px;height:2px;background:var(--accent);border-radius:2px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.tag{font-family:var(--mono);font-size:12.5px;padding:5px 11px;border-radius:8px;background:var(--accent-soft);color:var(--accent-ink)}
+
+/* projects */
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.card{position:relative;display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:32px;overflow:hidden;transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s,border-color .3s}
+.card::before{content:"";position:absolute;inset:0 0 auto 0;height:3px;background:linear-gradient(90deg,var(--accent),#c084fc,#fdba74);transform:scaleX(0);transform-origin:left;transition:transform .45s}
+.card:hover{transform:translateY(-6px);box-shadow:var(--shadow-hover);border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}
+.card:hover::before{transform:scaleX(1)}
+.card .meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.card .date{font-family:var(--mono);font-size:12.5px;color:var(--muted)}
+.card .pic{width:44px;height:44px;border-radius:13px;background:var(--accent-soft);color:var(--accent-ink);display:grid;place-items:center}
+.card h3{font-family:var(--serif);font-weight:400;font-size:30px;line-height:1.1;letter-spacing:-.01em;margin-bottom:12px}
+.card p{color:var(--muted);font-size:16px;flex:1}
+.card .tags{margin-top:20px}
+.card .go{display:inline-flex;align-items:center;gap:7px;margin-top:22px;font-weight:500;font-size:15px;color:var(--accent-ink)}
+.card .go svg{width:16px;height:16px;transition:transform .25s}
+.card:hover .go svg{transform:translate(3px,-3px)}
+
+/* skills */
+.skill-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.skill{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px 28px;transition:transform .25s,box-shadow .25s}
+.skill:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.skill h3{font-size:13px;font-family:var(--mono);font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--accent-ink);margin-bottom:16px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-size:14.5px;padding:6px 13px;border-radius:999px;border:1px solid var(--line);background:var(--bg);transition:border-color .2s,color .2s,background .2s}
+.chip:hover{border-color:var(--accent);color:var(--accent-ink);background:var(--accent-soft)}
+.skill.wide{grid-column:span 2}
+.chip.core{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+
+/* contact */
+.contact{padding-bottom:70px}
+.contact-box{position:relative;overflow:hidden;border-radius:28px;padding:68px 48px;text-align:center;background:var(--ink);color:var(--bg)}
+.contact-box::before{content:"";position:absolute;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(139,134,255,.5),transparent 70%);top:-220px;left:50%;transform:translateX(-50%);filter:blur(30px)}
+.contact-box>*{position:relative}
+.contact-box h2{margin:0 0 14px;color:var(--bg)}
+.contact-box h2 em{color:#b4b0ff}
+.contact-box p{max-width:520px;margin:0 auto 32px;opacity:.75}
+.contact-box .btns{justify-content:center;margin:0}
+.contact-box .btn{background:transparent;color:var(--bg);border-color:rgba(255,255,255,.25)}
+.contact-box .btn:hover{border-color:#b4b0ff;box-shadow:none;background:rgba(255,255,255,.07)}
+.contact-box .btn.primary{background:#fff;color:#15161a;border-color:#fff}
+.contact-box .btn.primary:hover{background:#e7e5ff}
+.mail-txt{margin-top:22px;font-family:var(--mono);font-size:13.5px;opacity:.6}
+footer{padding:32px 0 48px;color:var(--muted);font-size:14.5px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1);transition-delay:var(--d,0s)}
+.reveal.in{opacity:1;transform:none}
+.no-js .reveal{opacity:1;transform:none}
+
+@media (max-width:900px){
+  .hero{padding:128px 0 80px}
+  .hero-grid,.about-grid{grid-template-columns:1fr;gap:48px}
+  .portrait{order:-1;width:220px;justify-self:start}
+  .cards{grid-template-columns:1fr}
+  .skill-grid{grid-template-columns:1fr 1fr}
+  section{padding:76px 0}
+}
+@media (max-width:640px){
+  body{font-size:16.5px}
+  .wrap{padding:0 20px}
+  .burger{display:block}
+  .links{position:fixed;inset:68px 0 auto 0;flex-direction:column;align-items:stretch;gap:2px;padding:14px 20px 22px;background:var(--bg);border-bottom:1px solid var(--line);transform:translateY(-12px);opacity:0;visibility:hidden;transition:.25s}
+  .links.open{transform:none;opacity:1;visibility:visible}
+  .links a{padding:13px 14px;font-size:17px}
+  .links .cta{margin:8px 0 0;text-align:center}
+  .skill-grid{grid-template-columns:1fr}
+  .skill.wide{grid-column:auto}
+  .job{padding:24px 22px}
+  .card{padding:26px 24px}
+  .contact-box{padding:52px 24px}
+  .timeline{padding-left:28px}
+  .job::before{left:-28px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition-duration:.01ms!important}
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body class="no-js">
+<a class="skip" href="#main">Skip to content</a>
+
+<nav id="nav" aria-label="Primary">
+  <div class="wrap nav-in">
+    <a href="#top" class="logo" aria-label="Melissa Ruiz, home">melissa<i>.</i>ruiz</a>
+    <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="links">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8h16M4 16h16"/></svg>
+    </button>
+    <ul class="links" id="links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact" class="cta">Get in touch</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="main">
+<header class="hero" id="top">
+  <div class="glow g1"></div><div class="glow g2"></div>
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow reveal">Los Angeles, CA</span>
+      <h1 class="reveal" style="--d:.08s">Hi, I'm Melissa. I build the <em>systems</em> behind machine learning.</h1>
+      <p class="lede reveal" style="--d:.16s">Software engineer at <strong>Snap</strong> on the ML / AI platform team, working on <strong>training infrastructure, compute orchestration, and distributed systems</strong>, with a growing focus on agentic systems.</p>
+      <div class="btns reveal" style="--d:.24s">
+        <a class="btn primary" href="#experience">See my experience
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg></a>
+        <a class="btn" href="https://www.linkedin.com/in/melissa-ruiz-433572198/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <div class="portrait reveal" style="--d:.2s">
+      <div class="frame"></div>
+      <img src="src/assets/img/melissa.jpg" alt="Portrait of Melissa Ruiz" width="320" height="346" onerror="this.remove()">
+    </div>
+  </div>
+</header>
+
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div>
+      <div class="label reveal">About</div>
+      <h2 class="reveal">Full-stack roots, <em>backend</em> focus.</h2>
+      <p class="reveal"><strong>I started out in full-stack development</strong> and deliberately moved toward the backend infrastructure that makes ML work at scale.</p>
+      <p class="reveal">Since 2022 I've worked at <strong>Snap</strong>, primarily in <strong>Python</strong>, on the platform that trains models: orchestrating compute, building distributed systems, and making the path from idea to training run faster and more reliable for the engineers who depend on it.</p>
+      <p class="reveal">I like working across disciplines, and I'm happiest when a system I built quietly removes a headache for someone else.</p>
+    </div>
+    <div class="facts">
+      <div class="fact reveal">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></div>
+        <div><b>ML / AI platform engineering</b><span>Training infrastructure and compute orchestration</span></div>
+      </div>
+      <div class="fact reveal" style="--d:.08s">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M8 7.5l3 8M16 7.5l-3 8M8.5 6h7"/></svg></div>
+        <div><b>Distributed systems</b><span>Reliable, observable services built in Python</span></div>
+      </div>
+      <div class="fact reveal" style="--d:.16s">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></svg></div>
+        <div><b>B.S. Computer Science</b><span>Cal Poly Pomona · Magna Cum Laude</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="label reveal">Experience</div>
+    <h2 class="reveal">Where I've <em>worked</em>.</h2>
+    <div class="timeline">
+      <article class="job now reveal">
+        <div class="job-head">
+          <div><h3>Software Engineer, ML / AI Platform</h3><div class="org">Snap Inc.</div></div>
+          <div class="when">Jun 2022 – Present</div>
+        </div>
+        <ul>
+          <li>Build and maintain ML training infrastructure, including compute orchestration and distributed systems that other engineers train on.</li>
+          <li>Working on agentic systems and tooling for the platform.</li>
+        </ul>
+        <div class="tags"><span class="tag">Python</span><span class="tag">Distributed Systems</span><span class="tag">Compute Orchestration</span><span class="tag">ML Infrastructure</span></div>
+      </article>
+
+      <article class="job reveal">
+        <div class="job-head">
+          <div><h3>Software Engineer Intern</h3><div class="org">NASA Jet Propulsion Laboratory</div></div>
+          <div class="when">Electronic Fabrication &amp; Manufacturing Engineering</div>
+        </div>
+        <ul>
+          <li>Developed software that supports the fabrication of electronic components used in spaceflight missions.</li>
+          <li>Built web and application tooling in Python, SQL, and JavaScript, and contributed data reporting and shared-resource management.</li>
+        </ul>
+        <div class="tags"><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">JavaScript</span></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="label reveal">Skills</div>
+    <h2 class="reveal">What I <em>work with</em>.</h2>
+    <div class="skill-grid">
+      <div class="skill reveal">
+        <h3>Platform &amp; Orchestration</h3>
+        <div class="chips"><span class="chip core">Distributed Systems</span><span class="chip core">Compute Orchestration</span><span class="chip">Kubernetes</span><span class="chip">Kubeflow</span><span class="chip">Airflow</span><span class="chip">Docker &amp; Containers</span><span class="chip">Data Pipelines</span></div>
+      </div>
+      <div class="skill reveal" style="--d:0.08s">
+        <h3>ML Lifecycle</h3>
+        <div class="chips"><span class="chip">CI/CD for ML</span><span class="chip">Canary &amp; Shadow Rollouts</span><span class="chip">Experiment Tracking</span><span class="chip">Evaluation Pipelines</span></div>
+      </div>
+      <div class="skill reveal" style="--d:0.16s">
+        <h3>Observability &amp; Cloud</h3>
+        <div class="chips"><span class="chip">Prometheus / PromQL</span><span class="chip">Grafana</span><span class="chip">GCP</span></div>
+      </div>
+      <div class="skill reveal wide">
+        <h3>Agentic AI</h3>
+        <div class="chips"><span class="chip">LLM APIs</span><span class="chip">MCP</span><span class="chip">Agent Frameworks</span><span class="chip">Multi-Agent Orchestration</span><span class="chip">Agent Evals</span><span class="chip">Tracing &amp; Observability</span><span class="chip">Agentic Coding Workflows</span></div>
+      </div>
+      <div class="skill reveal" style="--d:0.08s">
+        <h3>Languages &amp; Data</h3>
+        <div class="chips"><span class="chip core">Python</span><span class="chip">TypeScript</span><span class="chip">Java</span><span class="chip">C++</span><span class="chip">SQL</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="contact-box reveal">
+      <h2>Let's <em>talk</em>.</h2>
+      <p>I'm always happy to chat about ML infrastructure, interesting projects, or opportunities. The best way to reach me is email or LinkedIn.</p>
+      <div class="btns">
+        <a class="btn primary" href="mailto:melissaruiz91300@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Email me</a>
+        <a class="btn" href="https://www.linkedin.com/in/melissa-ruiz-433572198/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr">2026</span> Melissa Ruiz</span>
+    <span>Los Angeles, CA</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  document.body.classList.remove('no-js');
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  var nav = document.getElementById('nav');
+  var onScroll = function(){ nav.classList.toggle('scrolled', window.scrollY > 12); };
+  onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+  var burger = document.getElementById('burger'), links = document.getElementById('links');
+  burger.addEventListener('click', function(){
+    var o = links.classList.toggle('open');
+    burger.setAttribute('aria-expanded', o);
+  });
+  links.addEventListener('click', function(e){
+    if (e.target.tagName === 'A'){ links.classList.remove('open'); burger.setAttribute('aria-expanded', false); }
+  });
+
+  var els = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, {threshold:.12, rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el){ io.observe(el); });
+  } else { els.forEach(function(el){ el.classList.add('in'); }); }
+
+  var secs = ['about','experience','skills'].map(function(id){ return document.getElementById(id); });
+  var navLinks = links.querySelectorAll('a:not(.cta)');
+  if ('IntersectionObserver' in window){
+    var so = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if (e.isIntersecting){
+          navLinks.forEach(function(a){ a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id); });
+        }
+      });
+    }, {rootMargin:'-45% 0px -50% 0px'});
+    secs.forEach(function(s){ if (s) so.observe(s); });
+  }
+})();
+</script>
+</body>
+</html>
